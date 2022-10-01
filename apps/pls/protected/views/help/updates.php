@@ -19,6 +19,7 @@ $this->breadcrumbs = [
 			<div class="col-md-12 update">
 				<h3><a href="<?= $item->link ?>" target="_blank"><?= $item->title ?></a></h3>
 				<p><?= $item->shortDescription ?></p>
+				<?php /*echo '<p>' . date('Y-m-d H:i:s', (int)$item->timestamp ) . '</p>';*/ ?>
 			</div>
 			<?php
 		}
