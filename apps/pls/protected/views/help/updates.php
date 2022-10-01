@@ -18,7 +18,7 @@ $this->breadcrumbs = [
 			?>
 			<div class="col-md-12 update">
 				<h3><a href="<?= $item->link ?>" target="_blank"><?= $item->title ?></a></h3>
-				<p><?= $item->description ?></p>
+				<p><?= $item->shortDescription ?></p>
 			</div>
 			<?php
 		}

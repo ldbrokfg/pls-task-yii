@@ -6,5 +6,6 @@ return [
 	'latestUpdatesFeedCacheDir' => '/tmp',
 	'latestUpdatesFeedCacheExp' => 3600 * 4,
 	'latestUpdatesFeedUrl'      => 'https://supereval.com/blog/category/supereval-updates/feed',
+	'task4FeedUrl'              => 'https://supereval.com/blog/feed',
 	'curlUserAgent'             => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.50',
 ];
