@@ -107,10 +107,10 @@ class HelpController extends Controller {
 		Feed::$cacheDir = Yii::app()->params['latestUpdatesFeedCacheDir'];
 		Feed::$cacheExpire = Yii::app()->params['latestUpdatesFeedCacheExp'];
 		
-		$processRss = new ProcessRss();
-		$processRss->feed = Feed::loadRss(Yii::app()->params['latestUpdatesFeedUrl']);
+		$gdProcessFeed = new GdProcessFeed();
+		$gdProcessFeed->feed = Feed::loadRss(Yii::app()->params['latestUpdatesFeedUrl']);
 		
-		$this->render('updates', ['updates' => $processRss->getLatestItems(5)]);
+		$this->render('updates', ['updates' => $gdProcessFeed->fetchLatestItems(5)]);
 	}
 
 }

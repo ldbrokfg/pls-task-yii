@@ -82,7 +82,23 @@ class SiteController extends Controller {
 				$this->redirect(Yii::app()->user->returnUrl);
 			}
 		}
-		$this->render('login', ['model' => $model]);
+		
+		$additionalSlides = [];
+		Feed::$userAgent = Yii::app()->params['curlUserAgent'];
+		Feed::$cacheDir = Yii::app()->params['latestUpdatesFeedCacheDir'];
+		Feed::$cacheExpire = Yii::app()->params['latestUpdatesFeedCacheExp'];
+		
+		$gdProcessFeed = new GdProcessFeed();
+		$gdProcessFeed->feed = Feed::loadRss(Yii::app()->params['latestUpdatesFeedUrl']);
+		$additionalSlides[] = $gdProcessFeed->fetchLatestItems()[0];
+		
+		$gdProcessFeed->feed = Feed::loadRss(Yii::app()->params['task4FeedUrl']);
+		$additionalSlides[] = $gdProcessFeed->fetchLatestItems()[0];
+		
+		$this->render('login', [
+			'model' => $model,
+			'additionalSlides' => $additionalSlides
+		]);
 	}
 
 	/**
