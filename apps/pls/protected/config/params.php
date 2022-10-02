@@ -3,7 +3,7 @@ return [
 	'title'                     => 'PLS 3rd Learning',
 	'adminEmail'                => 'contact@pls3rdlearning.com',
 	'copyrightInfo'             => 'Copyright &copy; 2022 PLS 3rd Learning. All Rights Reserved.',
-	'latestUpdatesFeedCacheDir' => '/tmp',
+	'latestUpdatesFeedCacheDir' => ini_get('sys_temp_dir'),
 	'latestUpdatesFeedCacheExp' => 3600 * 4,
 	'latestUpdatesFeedUrl'      => 'https://supereval.com/blog/category/supereval-updates/feed',
 	'task4FeedUrl'              => 'https://supereval.com/blog/feed',
