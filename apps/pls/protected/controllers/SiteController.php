@@ -90,10 +90,16 @@ class SiteController extends Controller {
 		
 		$gdProcessFeed = new GdProcessFeed();
 		$gdProcessFeed->feed = Feed::loadRss(Yii::app()->params['latestUpdatesFeedUrl']);
-		$additionalSlides[] = $gdProcessFeed->fetchLatestItems()[0];
+		$items = $gdProcessFeed->fetchLatestItems(1);
+		if (isset($items[0])) {
+			$additionalSlides[] = $items[0];
+		}
 		
 		$gdProcessFeed->feed = Feed::loadRss(Yii::app()->params['task4FeedUrl']);
-		$additionalSlides[] = $gdProcessFeed->fetchLatestItems()[0];
+		$items = $gdProcessFeed->fetchLatestItems(1);
+		if (isset($items[0])) {
+			$additionalSlides[] = $items[0];
+		}
 		
 		$this->render('login', [
 			'model' => $model,
