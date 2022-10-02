@@ -34,6 +34,7 @@
 						<div class="row">
 							<div class="col-md-12 bubble">
 								<?= $item->shortDescriptionNoReadMore ?>
+								<?php /*echo '<p>' . date('Y-m-d H:i:s', (int)$item->timestamp ) . '</p>';/**/ ?>
 							</div>
 						</div>
 						<a href="<?= $item->link ?>" target="_blank" class="btn btn-primary">Read More</a>
